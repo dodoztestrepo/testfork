@@ -37,6 +37,7 @@ Recognizing the diverse ecosystem of data sources and consumer applications, Foa
 -   **REST APIs & Webhooks:** Facilitating data exchange with SaaS platforms, custom applications, and external services through RESTful APIs and webhooks.
 -   **File Formats:** Simplifying data ingestion and result export through support for Excel, CSV, JSON, and other common file formats.
 -   **Visualization & Reporting Tools:** Ensuring seamless integration with tools like PowerBI and Tableau for intuitive data visualization and with ERP systems for operational planning and execution.
+-   **Enterprise Resource Planning (ERP) Systems:** Enabling integration with ERP systems such as SAP, Oracle ERP Cloud, Microsoft Dynamics, and others for streamlined operational planning, resource management, and execution.
 
 ## FoaaS API: Simplifying Forecasting
 

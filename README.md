@@ -1,5 +1,5 @@
 
-# Project Mellow: Envisioning the Future of Integrated Forecasting
+# Project Mellow: Managed Forecasting API
 
 The hassle-free way to embed advanced forecasting in any application without caring about infrastructure and maintenance.
 

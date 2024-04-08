@@ -1,2 +1,87 @@
-# sdk
-Mellow: Forecasting-as-a-Service (FoaaS)
+# Forecasting-as-a-Service (FoaaS): Envisioning the Future of Integrated Forecasting
+
+The hassle-free way to embed advanced forecasting in any application without caring about infrastructure and maintenance.
+
+
+---
+
+
+**Forecasting-as-a-Service (FoaaS)** represents a pioneering step towards embedding sophisticated forecasting capabilities seamlessly into applications across industries. With a focus on democratizing access to predictive analytics, FoaaS aims to abstract the complexity of statistical modeling into a straightforward, API-driven service. This document serves as both a conceptual framework and an invitation to the developer community to join in shaping a service tailored for ease of integration, scalability, and flexibility.
+
+## Concept Overview
+
+In an age where data drives decisions, the ability to predict future trends holds immense value. From optimizing supply chains through Sales & Operations Planning (S&OP) to refining financial forecasts for better Financial Planning & Analysis (FP&A), the applications of forecasting are vast and varied. However, integrating such capabilities often requires navigating through considerable technical complexity, scalability concerns, and data preprocessing hurdles.
+
+FoaaS envisions a world where these challenges are no longer barriers. Instead, developers, irrespective of their expertise in data science, can leverage powerful forecasting tools through a simple API call. FoaaS is not just about providing statistical forecasts; it's about embedding future insights directly into the operational fabric of businesses and applications.
+
+## Targeted Use Cases
+
+FoaaS is designed to cater to a wide array of forecasting needs:
+
+-   **Sales & Operations Planning (S&OP):** Enhancing the alignment of supply and demand by providing accurate demand forecasts.
+-   **Financial Planning & Analysis (FP&A):** Offering insights into future financial conditions to guide budgeting, financial planning, and risk management.
+-   **Inventory Management:** Optimizing inventory levels by accurately predicting demand, thus reducing carrying costs and improving customer satisfaction.
+-   **Market Trend Analysis:** Identifying future trends in market behavior to inform strategic business decisions.
+
+## Integration Ecosystem
+
+Recognizing the diverse ecosystem of data sources and consumer applications, FoaaS intends to support a broad spectrum of integrations:
+
+-   **Databases & Data Warehouses:** Whether through ODBC connectors or native integrations, connecting with SQL databases, NoSQL stores, and cloud-based data warehouses.
+-   **REST APIs & Webhooks:** Facilitating data exchange with SaaS platforms, custom applications, and external services through RESTful APIs and webhooks.
+-   **File Formats:** Simplifying data ingestion and result export through support for Excel, CSV, JSON, and other common file formats.
+-   **Visualization & Reporting Tools:** Ensuring seamless integration with tools like PowerBI and Tableau for intuitive data visualization and with ERP systems for operational planning and execution.
+
+## FoaaS API: Simplifying Forecasting
+
+The FoaaS API is designed to pave the path for easy integration of forecasting functionalities, reducing the overhead for developers and businesses alike.
+
+### Initialize and Configure
+
+Start by initializing FoaaS with your specific configurations to tailor the service to your needs:
+```python
+import mellow_sdk
+
+mellow_sdk.initialize({
+    'apiKey': 'YOUR_API_KEY'
+})
+```
+
+### Data Ingestion
+
+Effortlessly ingest data from various sources, preparing it for analysis without the need for extensive preprocessing:
+```python
+# Retrieve historical sales data
+sales_data = mellow_sdk.data.pull(source="sales_database", from_date="2023-01-01", to_date="2024-01-01")
+
+# Retrieve promotional activity data
+promotional_data = mellow_sdk.data.pull(source="marketing_platform", from_date="2023-01-01", to_date="2024-01-01")
+```
+
+### Generating Forecasts
+
+Leverage the power of FoaaS to generate forecasts, automatically selecting the most suitable model based on your data:
+```python
+# Automatically select forecasting model based on MAPE
+candidate_models = ["arima", "ets", "prophet", "mellow.temporal_wave", "community.josh529.cyclical"] 
+best_model = mellow_sdk.forecasting.auto_select(candidate_models, data=sales_data, promotions=promotional_data, metric="MAPE", context="sales") 
+
+# Create a forecast for the next quarter
+forecast = mellow_sdk.forecasting.create(model=best_model, settings="auto", data=sales_data, promotions=promotional_data, horizon="3M")
+```
+
+### Results Utilization
+
+Push the forecast results to your desired destination (database, Excel, email, ERP, etc.)
+```python
+mellow_sdk.results.push(destination="netsuite_erp", data=forecast)
+mellow_sdk.results.push(destination="powerbi", data=forecast)
+```
+
+## Call for Collaboration
+
+This whitepaper is an open invitation for developers, data scientists, and enthusiasts to collaborate on creating a tool that simplifies forecasting integration. Your expertise can help shape OFP into a platform that redefines forecasting integration, making it a seamless part of application development.
+
+## Conclusion
+
+OFP is more than just a forecasting tool; it's a movement towards making advanced forecasting accessible to all applications. By joining forces, we can build a future where integrating sophisticated forecasting is as straightforward as making an API call, regardless of the underlying complexity. Together, let's unlock the full potential of forecasting for applications across industries.
